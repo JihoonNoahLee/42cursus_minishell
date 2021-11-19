@@ -6,7 +6,7 @@
 /*   By: jihoolee <jihoolee@student.42SEOUL.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 16:51:10 by jihoolee          #+#    #+#             */
-/*   Updated: 2021/11/19 16:56:51 by jihoolee         ###   ########.fr       */
+/*   Updated: 2021/11/19 18:21:51 by jihoolee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,10 @@ void	handler(int signum)
 		rl_replace_line("", 1);
 		rl_redisplay();
 	}
-	else if ((signum == SIGINT && g_shell.input_mode == INPUT_STDIN) || \
-		(signum == SIGQUIT && g_shell.input_mode == INPUT_STDIN))
+	else if (signum == SIGINT && g_shell.input_mode == INPUT_STDIN)
 		write(STDOUT_FILENO, "\n", 1);
+	else if (signum == SIGQUIT && g_shell.input_mode == INPUT_STDIN)
+		write(STDOUT_FILENO, "Quit: 3\n", 8);
 	else if ((signum == SIGINT) && g_shell.input_mode & INPUT_HEREDOC)
 	{
 		ioctl(STDIN_FILENO, TIOCSTI, "\x04");
