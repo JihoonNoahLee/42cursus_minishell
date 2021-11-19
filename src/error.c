@@ -6,7 +6,7 @@
 /*   By: jihoolee <jihoolee@student.42SEOUL.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 13:58:37 by jihoolee          #+#    #+#             */
-/*   Updated: 2021/11/19 16:41:23 by jihoolee         ###   ########.fr       */
+/*   Updated: 2021/11/19 16:57:41 by jihoolee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*format_err(t_error error_code)
 	else if (error_code == PIPE_ERROR)
 		return ("error calling syscall pipe\n");
 	else if (error_code == PROCCESS_ERROR)
-		return("error while executing child proccess\n");\
+		return ("error while executing child proccess\n");
 	else if (error_code == FORK_ERROR)
 		return ("error during syscall fork()\n");
 	else if (error_code == FD_DUP_ERROR)

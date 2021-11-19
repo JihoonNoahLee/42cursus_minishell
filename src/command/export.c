@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   export.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jihoolee <jihoolee@student.42SEOUL.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/19 16:48:16 by jihoolee          #+#    #+#             */
+/*   Updated: 2021/11/19 16:48:18 by jihoolee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 extern t_minishell	g_shell;
@@ -34,7 +46,7 @@ int	check_dup(t_list *list, char *arg)
 {
 	char	**env_key_val;
 	char	**arg_key_val;
-	int		result;	
+	int		result;
 
 	arg_key_val = ft_split(arg, '=');
 	result = 0;
