@@ -6,7 +6,7 @@
 /*   By: jihoolee <jihoolee@student.42SEOUL.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 16:49:41 by jihoolee          #+#    #+#             */
-/*   Updated: 2021/11/19 16:49:42 by jihoolee         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:03:49 by jihoolee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	type_redirect(t_AST_Node **curr, t_list **token)
 	(*curr)->content = (t_redirect *)malloc(sizeof(t_redirect));
 	malloc_error_check((*curr)->content);
 	redirect = (*curr)->content;
+	ft_memset(redirect, 0, sizeof(redirect));
 	(*curr)->type = TYPE_REDIRECT;
 	check_redirect_mode(token, redirect, bf_fd, default_flag);
 	if ((*token)->next)
