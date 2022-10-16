@@ -6,7 +6,7 @@
 /*   By: jihoolee <jihoolee@student.42SEOUL.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 16:49:33 by jihoolee          #+#    #+#             */
-/*   Updated: 2021/11/19 16:49:35 by jihoolee         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:09:01 by jihoolee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ static t_AST_Node	**get_node_pipe(t_list **token, t_AST_Node **curr)
 
 static t_AST_Node	**parse_pipe_case(t_list **token, t_AST_Node **curr)
 {
-	t_AST_Node	*temp;
-
-	temp = NULL;
 	if (((t_token *)(*token)->content)->type == CUR_PIPE)
 	{
 		curr = get_node_pipe(token, curr);

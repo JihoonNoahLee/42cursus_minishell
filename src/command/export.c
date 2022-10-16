@@ -6,7 +6,7 @@
 /*   By: jihoolee <jihoolee@student.42SEOUL.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 16:48:16 by jihoolee          #+#    #+#             */
-/*   Updated: 2021/11/19 16:48:18 by jihoolee         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:10:17 by jihoolee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,8 @@ int	append_envp(char *arg)
 
 int	run_export(t_list *args)
 {
-	int		i;
 	int		len;
 
-	i = 0;
 	len = ft_lstsize(args);
 	if (len == 0)
 		print_export_list();

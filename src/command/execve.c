@@ -6,7 +6,7 @@
 /*   By: jihoolee <jihoolee@student.42SEOUL.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 16:48:01 by jihoolee          #+#    #+#             */
-/*   Updated: 2021/11/19 16:48:03 by jihoolee         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:10:01 by jihoolee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ char	**format_cmd_str(t_cmd *cmd)
 
 void	run_execve(t_cmd *cmd)
 {
-	int		result;
 	char	**str;
 	char	**env;
 
@@ -90,7 +89,7 @@ void	run_execve(t_cmd *cmd)
 	env = convert_list_to_arr(g_shell.export_list);
 	if (str == NULL || env == NULL)
 		error(MALLOC_ERROR);
-	result = execve(str[0], str, env);
+	execve(str[0], str, env);
 	write(2, "bash: ", 6);
 	write(2, cmd->cmd, ft_strlen(cmd->cmd));
 	if (check_dup(g_shell.export_list, "PATH") == 0)

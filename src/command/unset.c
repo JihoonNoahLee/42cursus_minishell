@@ -6,7 +6,7 @@
 /*   By: jihoolee <jihoolee@student.42SEOUL.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 16:48:38 by jihoolee          #+#    #+#             */
-/*   Updated: 2021/11/19 16:48:40 by jihoolee         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:11:04 by jihoolee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ int	del_first_node(t_list **list, char *arg)
 {
 	char	**env;
 	t_list	*temp;
-	int		result;
 
 	env = ft_split((*list)->content, '=');
-	result = 0;
 	if (ft_strncmp(arg, env[0], ft_strlen(arg) + 1) == 0)
 	{
 		temp = (*list);
@@ -64,11 +62,6 @@ void	del_middle_node(t_list **list, char *arg)
 
 void	del_node(t_list	**env_list, char *arg)
 {
-	t_list	*curr;
-	t_list	*former;
-
-	curr = *env_list;
-	former = curr;
 	if (!del_first_node(env_list, arg))
 		return ;
 	else
